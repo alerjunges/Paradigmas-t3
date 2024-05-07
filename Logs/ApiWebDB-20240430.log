@@ -1,0 +1,402 @@
+2024-04-30T19:45:52.1325433-03:00  [INF] Now listening on: "http://localhost:5075" (d826f4b8)
+2024-04-30T19:45:52.2732999-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-30T19:45:52.2790415-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-30T19:45:52.2824347-03:00  [INF] Content root path: "C:\Users\USER\source\repos\T2\ApiWebDB" (cc26f24e)
+2024-04-30T19:45:52.7556472-03:00 0HN39CT506DP6:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - null null (d509f86a)
+2024-04-30T19:45:53.1424193-03:00 0HN39CT506DP6:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 393.1188ms (74253ad3)
+2024-04-30T19:45:53.1731469-03:00 0HN39CT506DP6:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-04-30T19:45:53.1731467-03:00 0HN39CT506DP7:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - null null (d509f86a)
+2024-04-30T19:45:53.1749347-03:00 0HN39CT506DP6:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 1.9337ms (74253ad3)
+2024-04-30T19:45:53.2293870-03:00 0HN39CT506DP7:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 56.3354ms (74253ad3)
+2024-04-30T19:45:53.2972319-03:00 0HN39CT506DP7:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-04-30T19:45:53.3904206-03:00 0HN39CT506DP7:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 93.2701ms (74253ad3)
+2024-04-30T19:46:06.3764990-03:00 0HN39CT506DP8:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - null null (d509f86a)
+2024-04-30T19:46:06.3930169-03:00 0HN39CT506DP8:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (500cc934)
+2024-04-30T19:46:06.4231036-03:00 0HN39CT506DP8:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Get()" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T19:46:08.8230239-03:00 0HN39CT506DP8:00000001 [ERR] An error occurred using the connection to database '"apidb"' on server '"tcp://localhost:5432"'. (5fc3407c)
+2024-04-30T19:46:08.9974617-03:00 0HN39CT506DP8:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"ApiWebDB.BaseDados.ApiDbContext"'."
+""Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user \"postgres\"
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: FATAL
+    SqlState: 28P01
+    MessageText: password authentication failed for user \"postgres\"
+    File: auth.c
+    Line: 334
+    Routine: auth_failed" (f5c7ac34)
+Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user "postgres"
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ApiWebDB.Services.ClienteService.Get() in C:\Users\USER\source\repos\T2\ApiWebDB\Services\ClienteService.cs:line 75
+   at ApiWebDB.Controllers.ClientesController.Get() in C:\Users\USER\source\repos\T2\ApiWebDB\Controllers\ClientesController.cs:line 103
+  Exception data:
+    Severity: FATAL
+    SqlState: 28P01
+    MessageText: password authentication failed for user "postgres"
+    File: auth.c
+    Line: 334
+    Routine: auth_failed
+2024-04-30T19:46:09.1235836-03:00 0HN39CT506DP8:00000001 [INF] Executing "ObjectResult", writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2024-04-30T19:46:09.1362099-03:00 0HN39CT506DP8:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)" in 2708.3698ms (afa2e885)
+2024-04-30T19:46:09.1364948-03:00 0HN39CT506DP8:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (99874f2b)
+2024-04-30T19:46:09.1495274-03:00 0HN39CT506DP8:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - 500 null "application/json; charset=utf-8" 2773.1044ms (74253ad3)
+2024-04-30T19:50:14.4503769-03:00  [INF] Now listening on: "http://localhost:5075" (d826f4b8)
+2024-04-30T19:50:14.7067615-03:00 0HN39CVJ2SETN:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - null null (d509f86a)
+2024-04-30T19:50:14.7308301-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-30T19:50:14.7453491-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-30T19:50:14.7513836-03:00  [INF] Content root path: "C:\Users\USER\source\repos\T2\ApiWebDB" (cc26f24e)
+2024-04-30T19:50:15.0077234-03:00 0HN39CVJ2SETN:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 306.3255ms (74253ad3)
+2024-04-30T19:50:15.0461306-03:00 0HN39CVJ2SETM:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - null null (d509f86a)
+2024-04-30T19:50:15.0460947-03:00 0HN39CVJ2SETN:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-04-30T19:50:15.0497795-03:00 0HN39CVJ2SETN:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 3.8281ms (74253ad3)
+2024-04-30T19:50:15.1580614-03:00 0HN39CVJ2SETM:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 112.1476ms (74253ad3)
+2024-04-30T19:50:15.2256888-03:00 0HN39CVJ2SETM:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-04-30T19:50:15.3456026-03:00 0HN39CVJ2SETM:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 119.9587ms (74253ad3)
+2024-04-30T19:50:33.3174488-03:00 0HN39CVJ2SETO:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - "application/json" 114 (d509f86a)
+2024-04-30T19:50:33.3250806-03:00 0HN39CVJ2SETO:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (500cc934)
+2024-04-30T19:50:33.3547607-03:00 0HN39CVJ2SETO:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Insert(ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T19:50:33.6257609-03:00 0HN39CVJ2SETO:00000001 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-04-30T19:50:33.6306651-03:00 0HN39CVJ2SETO:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)" in 271.4526ms (afa2e885)
+2024-04-30T19:50:33.6310115-03:00 0HN39CVJ2SETO:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (99874f2b)
+2024-04-30T19:50:33.6329595-03:00 0HN39CVJ2SETO:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - 400 null "text/plain; charset=utf-8" 315.5209ms (74253ad3)
+2024-04-30T19:50:56.3138465-03:00 0HN39CVJ2SETP:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - null null (d509f86a)
+2024-04-30T19:50:56.3148365-03:00 0HN39CVJ2SETP:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (500cc934)
+2024-04-30T19:50:56.3180099-03:00 0HN39CVJ2SETP:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Get()" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T19:50:57.4185463-03:00 0HN39CVJ2SETP:00000001 [ERR] An error occurred using the connection to database '"ApiDB"' on server '"tcp://localhost:5432"'. (5fc3407c)
+2024-04-30T19:50:57.4975114-03:00 0HN39CVJ2SETP:00000001 [ERR] An exception occurred while iterating over the results of a query for context type '"ApiWebDB.BaseDados.ApiDbContext"'."
+""Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user \"postgres\"
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: FATAL
+    SqlState: 28P01
+    MessageText: password authentication failed for user \"postgres\"
+    File: auth.c
+    Line: 334
+    Routine: auth_failed" (f5c7ac34)
+Npgsql.PostgresException (0x80004005): 28P01: password authentication failed for user "postgres"
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.Internal.NpgsqlConnector.Authenticate(String username, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.Internal.NpgsqlConnector.<Open>g__OpenCore|213_1(NpgsqlConnector conn, SslMode sslMode, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken, Boolean isFirstAttempt)
+   at Npgsql.Internal.NpgsqlConnector.Open(NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.OpenNewConnector(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.PoolingDataSource.<Get>g__RentAsync|34_0(NpgsqlConnection conn, NpgsqlTimeout timeout, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.<Open>g__OpenAsync|42_0(Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ApiWebDB.Services.ClienteService.Get() in C:\Users\USER\source\repos\T2\ApiWebDB\Services\ClienteService.cs:line 75
+   at ApiWebDB.Controllers.ClientesController.Get() in C:\Users\USER\source\repos\T2\ApiWebDB\Controllers\ClientesController.cs:line 103
+  Exception data:
+    Severity: FATAL
+    SqlState: 28P01
+    MessageText: password authentication failed for user "postgres"
+    File: auth.c
+    Line: 334
+    Routine: auth_failed
+2024-04-30T19:50:57.5392703-03:00 0HN39CVJ2SETP:00000001 [INF] Executing "ObjectResult", writing value of type '"<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'. (605b4265)
+2024-04-30T19:50:57.5440346-03:00 0HN39CVJ2SETP:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)" in 1225.8713ms (afa2e885)
+2024-04-30T19:50:57.5443208-03:00 0HN39CVJ2SETP:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (99874f2b)
+2024-04-30T19:50:57.5554342-03:00 0HN39CVJ2SETP:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - 500 null "application/json; charset=utf-8" 1241.7628ms (74253ad3)
+2024-04-30T20:18:03.6885355-03:00  [INF] Now listening on: "http://localhost:5075" (d826f4b8)
+2024-04-30T20:18:03.8489474-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-30T20:18:03.8531273-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-30T20:18:03.8565105-03:00  [INF] Content root path: "C:\Users\USER\source\repos\T2\ApiWebDB" (cc26f24e)
+2024-04-30T20:18:04.1705746-03:00 0HN39DF4J5US7:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - null null (d509f86a)
+2024-04-30T20:18:04.5392831-03:00 0HN39DF4J5US7:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 374.5711ms (74253ad3)
+2024-04-30T20:18:04.5811281-03:00 0HN39DF4J5US8:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - null null (d509f86a)
+2024-04-30T20:18:04.5811923-03:00 0HN39DF4J5US7:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-04-30T20:18:04.5838603-03:00 0HN39DF4J5US7:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 2.5423ms (74253ad3)
+2024-04-30T20:18:04.6273681-03:00 0HN39DF4J5US8:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 46.4753ms (74253ad3)
+2024-04-30T20:18:04.6896350-03:00 0HN39DF4J5US8:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-04-30T20:18:04.7838678-03:00 0HN39DF4J5US8:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 94.1398ms (74253ad3)
+2024-04-30T20:18:09.1983973-03:00 0HN39DF4J5US9:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - null null (d509f86a)
+2024-04-30T20:18:09.2110567-03:00 0HN39DF4J5US9:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (500cc934)
+2024-04-30T20:18:09.2432751-03:00 0HN39DF4J5US9:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Get()" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:18:11.4652145-03:00 0HN39DF4J5US9:00000001 [INF] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t" (0723d8ff)
+2024-04-30T20:18:11.5972292-03:00 0HN39DF4J5US9:00000001 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-04-30T20:18:11.6026548-03:00 0HN39DF4J5US9:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)" in 2354.9199ms (afa2e885)
+2024-04-30T20:18:11.6029295-03:00 0HN39DF4J5US9:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (99874f2b)
+2024-04-30T20:18:11.6105216-03:00 0HN39DF4J5US9:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - 404 null "text/plain; charset=utf-8" 2412.2773ms (74253ad3)
+2024-04-30T20:19:15.2616950-03:00 0HN39DF4J5USA:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - "application/json" 122 (d509f86a)
+2024-04-30T20:19:15.2624538-03:00 0HN39DF4J5USA:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (500cc934)
+2024-04-30T20:19:15.2751856-03:00 0HN39DF4J5USA:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Insert(ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:19:15.3287598-03:00 0HN39DF4J5USA:00000001 [INF] Executing "OkObjectResult", writing value of type '"null"'. (605b4265)
+2024-04-30T20:19:15.3292232-03:00 0HN39DF4J5USA:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)" in 53.895ms (afa2e885)
+2024-04-30T20:19:15.3293777-03:00 0HN39DF4J5USA:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (99874f2b)
+2024-04-30T20:19:15.3297186-03:00 0HN39DF4J5USA:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - 204 null null 68.2066ms (74253ad3)
+2024-04-30T20:20:51.9105860-03:00 0HN39DF4J5USB:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - "application/json" 122 (d509f86a)
+2024-04-30T20:20:51.9157685-03:00 0HN39DF4J5USB:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (500cc934)
+2024-04-30T20:20:51.9160649-03:00 0HN39DF4J5USB:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Insert(ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:21:32.8908645-03:00  [INF] Now listening on: "http://localhost:5075" (d826f4b8)
+2024-04-30T20:21:33.0126574-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2024-04-30T20:21:33.0159789-03:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2024-04-30T20:21:33.0180939-03:00  [INF] Content root path: "C:\Users\USER\source\repos\T2\ApiWebDB" (cc26f24e)
+2024-04-30T20:21:33.3236821-03:00 0HN39DH2VEVTV:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - null null (d509f86a)
+2024-04-30T20:21:33.5075833-03:00 0HN39DH2VEVTV:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 187.9367ms (74253ad3)
+2024-04-30T20:21:33.5444644-03:00 0HN39DH2VEVTV:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - null null (d509f86a)
+2024-04-30T20:21:33.5444657-03:00 0HN39DH2VEVU0:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - null null (d509f86a)
+2024-04-30T20:21:33.5476062-03:00 0HN39DH2VEVTV:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_framework/aspnetcore-browser-refresh.js""" - 200 13752 "application/javascript; charset=utf-8" 3.1892ms (74253ad3)
+2024-04-30T20:21:33.5746892-03:00 0HN39DH2VEVU0:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/_vs/browserLink""" - 200 null "text/javascript; charset=UTF-8" 30.3248ms (74253ad3)
+2024-04-30T20:21:33.6291147-03:00 0HN39DH2VEVU0:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - null null (d509f86a)
+2024-04-30T20:21:33.7258719-03:00 0HN39DH2VEVU0:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 96.8147ms (74253ad3)
+2024-04-30T20:21:50.8070558-03:00 0HN39DH2VEVU1:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - "application/json" 122 (d509f86a)
+2024-04-30T20:21:50.8149198-03:00 0HN39DH2VEVU1:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (500cc934)
+2024-04-30T20:21:50.8444366-03:00 0HN39DH2VEVU1:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Insert(ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:22:00.7336987-03:00 0HN39DH2VEVU1:00000001 [INF] Executed DbCommand ("88"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?', @p3='?' (DbType = DateTime2), @p4='?', @p5='?', @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_clientes (alteradoem, criadoem, documento, nascimento, nome, telefone, tipodoc)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING id;" (0723d8ff)
+2024-04-30T20:22:00.7742185-03:00 0HN39DH2VEVU1:00000001 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:22:00.7911385-03:00 0HN39DH2VEVU1:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)" in 9942.2668ms (afa2e885)
+2024-04-30T20:22:00.7913454-03:00 0HN39DH2VEVU1:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (99874f2b)
+2024-04-30T20:22:00.8018312-03:00 0HN39DH2VEVU1:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - 200 null "application/json; charset=utf-8" 9994.8683ms (74253ad3)
+2024-04-30T20:26:37.4929797-03:00 0HN39DH2VEVU2:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5075""""/api/Clientes/1""" - "application/json" 122 (d509f86a)
+2024-04-30T20:26:37.5006759-03:00 0HN39DH2VEVU2:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)"' (500cc934)
+2024-04-30T20:26:37.5266707-03:00 0HN39DH2VEVU2:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Update(Int32, ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:26:37.9829903-03:00 0HN39DH2VEVU2:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:26:38.0092590-03:00 0HN39DH2VEVU2:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:26:38.0285620-03:00 0HN39DH2VEVU2:00000001 [INF] Executed DbCommand ("11"ms) [Parameters=["@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?', @p3='?' (DbType = DateTime2), @p4='?', @p5='?', @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_clientes SET alteradoem = @p0, criadoem = @p1, documento = @p2, nascimento = @p3, nome = @p4, telefone = @p5, tipodoc = @p6
+WHERE id = @p7;" (0723d8ff)
+2024-04-30T20:26:38.0301032-03:00 0HN39DH2VEVU2:00000001 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:26:38.0318985-03:00 0HN39DH2VEVU2:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)" in 504.4224ms (afa2e885)
+2024-04-30T20:26:38.0320711-03:00 0HN39DH2VEVU2:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)"' (99874f2b)
+2024-04-30T20:26:38.0325973-03:00 0HN39DH2VEVU2:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5075""""/api/Clientes/1""" - 200 null "application/json; charset=utf-8" 541.3899ms (74253ad3)
+2024-04-30T20:29:22.7822461-03:00 0HN39DH2VEVU3:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - "application/json" 122 (d509f86a)
+2024-04-30T20:29:22.7855551-03:00 0HN39DH2VEVU3:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (500cc934)
+2024-04-30T20:29:22.7863435-03:00 0HN39DH2VEVU3:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Insert(ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:29:25.6455710-03:00 0HN39DH2VEVU3:00000001 [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?', @p3='?' (DbType = DateTime2), @p4='?', @p5='?', @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_clientes (alteradoem, criadoem, documento, nascimento, nome, telefone, tipodoc)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING id;" (0723d8ff)
+2024-04-30T20:29:25.6468675-03:00 0HN39DH2VEVU3:00000001 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:29:25.6472775-03:00 0HN39DH2VEVU3:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)" in 2860.8103ms (afa2e885)
+2024-04-30T20:29:25.6474388-03:00 0HN39DH2VEVU3:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (99874f2b)
+2024-04-30T20:29:25.6477366-03:00 0HN39DH2VEVU3:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - 200 null "application/json; charset=utf-8" 2869.0192ms (74253ad3)
+2024-04-30T20:29:54.1886195-03:00 0HN39DH2VEVU4:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5075""""/api/Clientes/2""" - "application/json" 119 (d509f86a)
+2024-04-30T20:29:54.1888436-03:00 0HN39DH2VEVU4:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)"' (500cc934)
+2024-04-30T20:29:54.1890159-03:00 0HN39DH2VEVU4:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Update(Int32, ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:29:54.1966849-03:00 0HN39DH2VEVU4:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:29:54.2013987-03:00 0HN39DH2VEVU4:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:29:54.2093698-03:00 0HN39DH2VEVU4:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?', @p3='?' (DbType = DateTime2), @p4='?', @p5='?', @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_clientes SET alteradoem = @p0, criadoem = @p1, documento = @p2, nascimento = @p3, nome = @p4, telefone = @p5, tipodoc = @p6
+WHERE id = @p7;" (0723d8ff)
+2024-04-30T20:29:54.2099576-03:00 0HN39DH2VEVU4:00000001 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:29:54.2104091-03:00 0HN39DH2VEVU4:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)" in 21.1995ms (afa2e885)
+2024-04-30T20:29:54.2107555-03:00 0HN39DH2VEVU4:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)"' (99874f2b)
+2024-04-30T20:29:54.2110181-03:00 0HN39DH2VEVU4:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5075""""/api/Clientes/2""" - 200 null "application/json; charset=utf-8" 22.5195ms (74253ad3)
+2024-04-30T20:30:22.3659175-03:00 0HN39DH2VEVU5:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - null null (d509f86a)
+2024-04-30T20:30:22.3948082-03:00 0HN39DH2VEVU5:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (500cc934)
+2024-04-30T20:30:22.3971942-03:00 0HN39DH2VEVU5:00000001 [INF] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Get()" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:30:22.4094473-03:00 0HN39DH2VEVU5:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t" (0723d8ff)
+2024-04-30T20:30:22.4102407-03:00 0HN39DH2VEVU5:00000001 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[ApiWebDB.BaseDados.Models.TbCliente, ApiWebDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-04-30T20:30:22.4138798-03:00 0HN39DH2VEVU5:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)" in 16.5645ms (afa2e885)
+2024-04-30T20:30:22.4140824-03:00 0HN39DH2VEVU5:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (99874f2b)
+2024-04-30T20:30:22.4142961-03:00 0HN39DH2VEVU5:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - 200 null "application/json; charset=utf-8" 49.6909ms (74253ad3)
+2024-04-30T20:32:42.9671473-03:00 0HN39DH2VEVU6:00000001 [INF] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5075""""/api/Clientes/2""" - null null (d509f86a)
+2024-04-30T20:32:42.9677312-03:00 0HN39DH2VEVU6:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)"' (500cc934)
+2024-04-30T20:32:42.9718392-03:00 0HN39DH2VEVU6:00000001 [INF] Route matched with "{action = \"Delete\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Delete(Int32)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:32:42.9824725-03:00 0HN39DH2VEVU6:00000001 [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:32:43.0065133-03:00 0HN39DH2VEVU6:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM tb_clientes
+WHERE id = @p0;" (0723d8ff)
+2024-04-30T20:32:43.0139252-03:00 0HN39DH2VEVU6:00000001 [INF] Executing StatusCodeResult, setting HTTP status code 204 (3fe03d2f)
+2024-04-30T20:32:43.0140663-03:00 0HN39DH2VEVU6:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)" in 42.0764ms (afa2e885)
+2024-04-30T20:32:43.0141903-03:00 0HN39DH2VEVU6:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)"' (99874f2b)
+2024-04-30T20:32:43.0144936-03:00 0HN39DH2VEVU6:00000001 [INF] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5075""""/api/Clientes/2""" - 204 null null 47.5018ms (74253ad3)
+2024-04-30T20:32:51.0815437-03:00 0HN39DH2VEVU6:00000002 [INF] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5075""""/api/Clientes/1""" - null null (d509f86a)
+2024-04-30T20:32:51.0818600-03:00 0HN39DH2VEVU6:00000002 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)"' (500cc934)
+2024-04-30T20:32:51.0819975-03:00 0HN39DH2VEVU6:00000002 [INF] Route matched with "{action = \"Delete\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Delete(Int32)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:32:51.0879066-03:00 0HN39DH2VEVU6:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:32:51.0980893-03:00 0HN39DH2VEVU6:00000002 [INF] Executed DbCommand ("4"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM tb_clientes
+WHERE id = @p0;" (0723d8ff)
+2024-04-30T20:32:51.0985978-03:00 0HN39DH2VEVU6:00000002 [INF] Executing StatusCodeResult, setting HTTP status code 204 (3fe03d2f)
+2024-04-30T20:32:51.0987180-03:00 0HN39DH2VEVU6:00000002 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)" in 16.6356ms (afa2e885)
+2024-04-30T20:32:51.0988430-03:00 0HN39DH2VEVU6:00000002 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)"' (99874f2b)
+2024-04-30T20:32:51.0992016-03:00 0HN39DH2VEVU6:00000002 [INF] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5075""""/api/Clientes/1""" - 204 null null 17.7599ms (74253ad3)
+2024-04-30T20:33:12.4880138-03:00 0HN39DH2VEVU6:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - null null (d509f86a)
+2024-04-30T20:33:12.4883816-03:00 0HN39DH2VEVU6:00000003 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (500cc934)
+2024-04-30T20:33:12.4885269-03:00 0HN39DH2VEVU6:00000003 [INF] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Get()" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:33:12.4984701-03:00 0HN39DH2VEVU6:00000003 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t" (0723d8ff)
+2024-04-30T20:33:12.5360806-03:00 0HN39DH2VEVU6:00000003 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-04-30T20:33:12.5365075-03:00 0HN39DH2VEVU6:00000003 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)" in 47.8615ms (afa2e885)
+2024-04-30T20:33:12.5366059-03:00 0HN39DH2VEVU6:00000003 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (99874f2b)
+2024-04-30T20:33:12.5367750-03:00 0HN39DH2VEVU6:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - 404 null "text/plain; charset=utf-8" 48.9606ms (74253ad3)
+2024-04-30T20:33:27.0827817-03:00 0HN39DH2VEVU6:00000004 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - "application/json" 122 (d509f86a)
+2024-04-30T20:33:27.0831125-03:00 0HN39DH2VEVU6:00000004 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (500cc934)
+2024-04-30T20:33:27.0832585-03:00 0HN39DH2VEVU6:00000004 [INF] Route matched with "{action = \"Insert\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Insert(ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:33:29.3003604-03:00 0HN39DH2VEVU6:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?', @p3='?' (DbType = DateTime2), @p4='?', @p5='?', @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_clientes (alteradoem, criadoem, documento, nascimento, nome, telefone, tipodoc)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING id;" (0723d8ff)
+2024-04-30T20:33:29.3010125-03:00 0HN39DH2VEVU6:00000004 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:33:29.3016545-03:00 0HN39DH2VEVU6:00000004 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)" in 2218.3082ms (afa2e885)
+2024-04-30T20:33:29.3019508-03:00 0HN39DH2VEVU6:00000004 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (99874f2b)
+2024-04-30T20:33:29.3023118-03:00 0HN39DH2VEVU6:00000004 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - 200 null "application/json; charset=utf-8" 2219.4768ms (74253ad3)
+2024-04-30T20:33:40.3689024-03:00 0HN39DH2VEVU6:00000005 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - null null (d509f86a)
+2024-04-30T20:33:40.3692979-03:00 0HN39DH2VEVU6:00000005 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (500cc934)
+2024-04-30T20:33:40.3695438-03:00 0HN39DH2VEVU6:00000005 [INF] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Get()" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:33:40.3743452-03:00 0HN39DH2VEVU6:00000005 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t" (0723d8ff)
+2024-04-30T20:33:40.3748715-03:00 0HN39DH2VEVU6:00000005 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[ApiWebDB.BaseDados.Models.TbCliente, ApiWebDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (605b4265)
+2024-04-30T20:33:40.3753307-03:00 0HN39DH2VEVU6:00000005 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)" in 5.6259ms (afa2e885)
+2024-04-30T20:33:40.3755365-03:00 0HN39DH2VEVU6:00000005 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (99874f2b)
+2024-04-30T20:33:40.3759612-03:00 0HN39DH2VEVU6:00000005 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - 200 null "application/json; charset=utf-8" 7.0708ms (74253ad3)
+2024-04-30T20:33:58.0424132-03:00 0HN39DH2VEVU7:00000001 [INF] Request starting "HTTP/1.1" "PUT" "http"://"localhost:5075""""/api/Clientes/3""" - "application/json" 119 (d509f86a)
+2024-04-30T20:33:58.0425881-03:00 0HN39DH2VEVU7:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)"' (500cc934)
+2024-04-30T20:33:58.0427023-03:00 0HN39DH2VEVU7:00000001 [INF] Route matched with "{action = \"Update\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Update(Int32, ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:33:58.0489693-03:00 0HN39DH2VEVU7:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:33:58.0548558-03:00 0HN39DH2VEVU7:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:33:58.0639502-03:00 0HN39DH2VEVU7:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@p7='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?', @p3='?' (DbType = DateTime2), @p4='?', @p5='?', @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""UPDATE tb_clientes SET alteradoem = @p0, criadoem = @p1, documento = @p2, nascimento = @p3, nome = @p4, telefone = @p5, tipodoc = @p6
+WHERE id = @p7;" (0723d8ff)
+2024-04-30T20:33:58.0644740-03:00 0HN39DH2VEVU7:00000001 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:33:58.0649141-03:00 0HN39DH2VEVU7:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)" in 22.1036ms (afa2e885)
+2024-04-30T20:33:58.0651096-03:00 0HN39DH2VEVU7:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Update (ApiWebDB)"' (99874f2b)
+2024-04-30T20:33:58.0654093-03:00 0HN39DH2VEVU7:00000001 [INF] Request finished "HTTP/1.1" "PUT" "http"://"localhost:5075""""/api/Clientes/3""" - 200 null "application/json; charset=utf-8" 23.0012ms (74253ad3)
+2024-04-30T20:34:13.5157288-03:00 0HN39DH2VEVU8:00000001 [INF] Request starting "HTTP/1.1" "DELETE" "http"://"localhost:5075""""/api/Clientes/3""" - null null (d509f86a)
+2024-04-30T20:34:13.5160733-03:00 0HN39DH2VEVU8:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)"' (500cc934)
+2024-04-30T20:34:13.5163880-03:00 0HN39DH2VEVU8:00000001 [INF] Route matched with "{action = \"Delete\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Delete(Int32)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:34:13.5260385-03:00 0HN39DH2VEVU8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:34:13.5320004-03:00 0HN39DH2VEVU8:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""DELETE FROM tb_clientes
+WHERE id = @p0;" (0723d8ff)
+2024-04-30T20:34:13.5330885-03:00 0HN39DH2VEVU8:00000001 [INF] Executing StatusCodeResult, setting HTTP status code 204 (3fe03d2f)
+2024-04-30T20:34:13.5333105-03:00 0HN39DH2VEVU8:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)" in 14.9999ms (afa2e885)
+2024-04-30T20:34:13.5334804-03:00 0HN39DH2VEVU8:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Delete (ApiWebDB)"' (99874f2b)
+2024-04-30T20:34:13.5338463-03:00 0HN39DH2VEVU8:00000001 [INF] Request finished "HTTP/1.1" "DELETE" "http"://"localhost:5075""""/api/Clientes/3""" - 204 null null 18.2133ms (74253ad3)
+2024-04-30T20:34:25.0116231-03:00 0HN39DH2VEVU8:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - null null (d509f86a)
+2024-04-30T20:34:25.0119283-03:00 0HN39DH2VEVU8:00000002 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (500cc934)
+2024-04-30T20:34:25.0121406-03:00 0HN39DH2VEVU8:00000002 [INF] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Get()" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:34:25.0166282-03:00 0HN39DH2VEVU8:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t" (0723d8ff)
+2024-04-30T20:34:25.0491880-03:00 0HN39DH2VEVU8:00000002 [INF] Executing "NotFoundObjectResult", writing value of type '"System.String"'. (605b4265)
+2024-04-30T20:34:25.0496911-03:00 0HN39DH2VEVU8:00000002 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)" in 37.3357ms (afa2e885)
+2024-04-30T20:34:25.0499137-03:00 0HN39DH2VEVU8:00000002 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Get (ApiWebDB)"' (99874f2b)
+2024-04-30T20:34:25.0503461-03:00 0HN39DH2VEVU8:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes""" - 404 null "text/plain; charset=utf-8" 38.6895ms (74253ad3)
+2024-04-30T20:37:06.6341742-03:00 0HN39DH2VEVU9:00000001 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - "application/json" 122 (d509f86a)
+2024-04-30T20:37:06.6348348-03:00 0HN39DH2VEVU9:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (500cc934)
+2024-04-30T20:37:06.6350055-03:00 0HN39DH2VEVU9:00000001 [INF] Route matched with "{action = \"Insert\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] Insert(ApiWebDB.Services.DTOs.ClienteDTO)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:37:08.4259015-03:00 0HN39DH2VEVU9:00000001 [INF] Executed DbCommand ("10"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?', @p3='?' (DbType = DateTime2), @p4='?', @p5='?', @p6='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO tb_clientes (alteradoem, criadoem, documento, nascimento, nome, telefone, tipodoc)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+RETURNING id;" (0723d8ff)
+2024-04-30T20:37:08.4265261-03:00 0HN39DH2VEVU9:00000001 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:37:08.4267644-03:00 0HN39DH2VEVU9:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)" in 1791.6983ms (afa2e885)
+2024-04-30T20:37:08.4268590-03:00 0HN39DH2VEVU9:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.Insert (ApiWebDB)"' (99874f2b)
+2024-04-30T20:37:08.4270325-03:00 0HN39DH2VEVU9:00000001 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5075""""/api/Clientes""" - 200 null "application/json; charset=utf-8" 1792.9651ms (74253ad3)
+2024-04-30T20:37:21.2137342-03:00 0HN39DH2VEVUA:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes/4""" - null null (d509f86a)
+2024-04-30T20:37:21.2139496-03:00 0HN39DH2VEVUA:00000001 [INF] Executing endpoint '"ApiWebDB.Controllers.ClientesController.GetById (ApiWebDB)"' (500cc934)
+2024-04-30T20:37:21.2159856-03:00 0HN39DH2VEVUA:00000001 [INF] Route matched with "{action = \"GetById\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[ApiWebDB.BaseDados.Models.TbCliente] GetById(Int32)" on controller "ApiWebDB.Controllers.ClientesController" ("ApiWebDB"). (122b2fdf)
+2024-04-30T20:37:21.2260434-03:00 0HN39DH2VEVUA:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT t.id, t.alteradoem, t.criadoem, t.documento, t.nascimento, t.nome, t.telefone, t.tipodoc
+FROM tb_clientes AS t
+WHERE t.id = @__id_0
+LIMIT 1" (0723d8ff)
+2024-04-30T20:37:21.2265732-03:00 0HN39DH2VEVUA:00000001 [INF] Executing "OkObjectResult", writing value of type '"ApiWebDB.BaseDados.Models.TbCliente"'. (605b4265)
+2024-04-30T20:37:21.2270905-03:00 0HN39DH2VEVUA:00000001 [INF] Executed action "ApiWebDB.Controllers.ClientesController.GetById (ApiWebDB)" in 10.9893ms (afa2e885)
+2024-04-30T20:37:21.2271951-03:00 0HN39DH2VEVUA:00000001 [INF] Executed endpoint '"ApiWebDB.Controllers.ClientesController.GetById (ApiWebDB)"' (99874f2b)
+2024-04-30T20:37:21.2273943-03:00 0HN39DH2VEVUA:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5075""""/api/Clientes/4""" - 200 null "application/json; charset=utf-8" 13.6829ms (74253ad3)
